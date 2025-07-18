@@ -1,0 +1,179 @@
+body {
+  width: 350px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #45a049;
+}
+
+.text-section {
+  margin-bottom: 20px;
+}
+
+.text-section h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.text-display {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px 12px;
+  min-height: 4px;
+  max-height: 40px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#textContent {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 8px;
+}
+
+.text-actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.copy-btn, .clear-btn {
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.copy-btn[disabled] {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.copy-btn:hover:not([disabled]) {
+  background: #ffe0b2;
+}
+
+.clear-btn:hover {
+  background: #f8d7da;
+}
+
+.instructions {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.instructions ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 5px;
+}
+
+.status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.status.success {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.status.error {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.status.info {
+  background: #e2f3ff;
+  border: 1px solid #b8daff;
+  color: #004085;
+}
+
+#tesseract-popup-loader {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 6px;
+  margin-bottom: 10px;
+}
+
+#tesseract-popup-loader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  transition: width 0.2s;
+}
+
+#tesseract-popup-loader-label {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #333;
+  font-size: 13px;
+  background: rgba(255,255,255,0.95);
+  padding: 2px 8px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+} 

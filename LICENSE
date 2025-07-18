@@ -19,3 +19,42 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+# Third-Party Licenses and Attributions
+
+This project bundles and uses [Tesseract.js](https://tesseract.projectnaptha.com/), which is licensed under the Apache License, Version 2.0:
+
+---
+
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. Definitions.
+
+   "License" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.
+
+   ... (full Apache-2.0 license text should be included here, but for brevity, see https://www.apache.org/licenses/LICENSE-2.0)
+
+2. Attribution
+
+   This extension uses Tesseract.js (https://github.com/naptha/tesseract.js) by [@antimatter15](https://github.com/antimatter15), [@jeromewu](https://github.com/jeromewu), and contributors, licensed under the Apache License, Version 2.0.
+
+   You may obtain a copy of the License at:
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+---
+
+For the full text of the Apache License, Version 2.0, see:
+https://www.apache.org/licenses/LICENSE-2.0

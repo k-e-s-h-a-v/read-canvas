@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Read Canvas",
+  "version": "2.0",
+  "description": "Reads text from canvas elements using Tesseract.js OCR and fills input fields",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "libs/tesseract.min.js",
+        "content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Canvas Text Reader"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/worker.min.js",
+        "libs/tesseract-core.wasm.js",
+        "libs/eng.traineddata.gz"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  }
+}
