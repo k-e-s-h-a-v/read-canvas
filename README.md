@@ -9,6 +9,28 @@
 
 ---
 
+## Installation & Usage
+
+1. **Direct Download (Recommended for most users):**
+   - Download the latest `read-canvas.crx` file from the [Releases page](https://github.com/k-e-s-h-a-v/read-canvas/releases).
+   - Open `chrome://extensions` in your Chrome browser.
+   - Enable **Developer mode** (toggle in the top right).
+   - Drag and drop the downloaded `read-canvas.crx` file onto the extensions page to install.
+
+2. **Clone the repository (for developers):**
+   ```bash
+   git clone git@github.com:k-e-s-h-a-v/read-canvas.git
+   cd read-canvas
+   ```
+
+3. **Install**: Load the extension in Chrome via `chrome://extensions` (Developer Mode > Load unpacked > select this folder).
+4. **Usage**:
+   - Navigate to a page with a canvas (e.g., CAPTCHA, drawing, or game).
+   - Click the extension icon or use the popup to trigger OCR.
+   - The recognized text will be auto-filled into the nearest input field, and also available in the popup for copying.
+
+---
+
 ## Features
 
 - **One-click OCR**: Extracts text from the largest visible canvas on the page with a single click.
@@ -25,22 +47,6 @@
 2. **Text Extraction**: The selected canvas is converted to an image and processed by Tesseract.js, which recognizes and extracts any text content.
 3. **Auto-Fill**: The extension attempts to find the most relevant input field near the canvas and fills it with the recognized text.
 4. **Popup Access**: The last extracted text is stored and can be viewed, copied, or cleared from the popup.
-
-
-
-## Installation & Usage
-
-1. **Clone the repository**:
-   ```bash
-   git clone git@github.com:k-e-s-h-a-v/read-canvas.git
-   cd read-canvas
-   ```
-
-2. **Install**: Load the extension in Chrome via `chrome://extensions` (Developer Mode > Load unpacked > select this folder).
-3. **Usage**:
-   - Navigate to a page with a canvas (e.g., CAPTCHA, drawing, or game).
-   - Click the extension icon or use the popup to trigger OCR.
-   - The recognized text will be auto-filled into the nearest input field, and also available in the popup for copying.
 
 ---
 
