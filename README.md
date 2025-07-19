@@ -9,6 +9,14 @@
 
 ---
 
+## Demo
+
+<img src="read-canvas-demo.gif" alt="Read Canvas Demo" width="600" />
+
+Experience Read Canvas in action: extract text from canvas elements and auto-fill input fields with a single click.
+
+---
+
 ## Installation & Usage
 
 1. **Direct Download (Recommended for most users):**
