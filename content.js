@@ -137,13 +137,37 @@ class CanvasTextReader {
         throw new Error('Tesseract worker not initialized');
       }
 
+      // Preprocess: upscale and binarize
+      function preprocessCanvas(canvas) {
+        const scale = 2; // Upscale for better OCR
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = canvas.width * scale;
+        tempCanvas.height = canvas.height * scale;
+        const ctx = tempCanvas.getContext('2d');
+        ctx.drawImage(canvas, 0, 0, tempCanvas.width, tempCanvas.height);
+
+        // Binarize: convert to black and white
+        const imageData = ctx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
+        for (let i = 0; i < imageData.data.length; i += 4) {
+          const avg = (imageData.data[i] + imageData.data[i+1] + imageData.data[i+2]) / 3;
+          const value = avg > 128 ? 255 : 0;
+          imageData.data[i] = imageData.data[i+1] = imageData.data[i+2] = value;
+        }
+        ctx.putImageData(imageData, 0, 0);
+
+        return tempCanvas.toDataURL('image/png');
+      }
+
       try {
-        // Convert canvas to image data
-        const imageData = canvas.toDataURL('image/png');
-        console.log('Image data URL:', imageData.slice(0, 100)); // Print first 100 chars
+        // Use preprocessed image for OCR
+        const preprocessedImage = preprocessCanvas(canvas);
+        console.log('Preprocessed image data URL:', preprocessedImage.slice(0, 100)); // Print first 100 chars
         chrome.runtime.sendMessage({ action: 'tesseractProgress', progress: 0, status: 'Recognizing text...' });
-        // Use Tesseract.js to perform OCR
-        const { data: { text } } = await this.worker.recognize(imageData);
+        // Use Tesseract.js to perform OCR with config
+        const { data: { text } } = await this.worker.recognize(preprocessedImage, 'eng', {
+          tessedit_char_whitelist: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&',
+          tessedit_pageseg_mode: 7 // PSM_SINGLE_LINE
+        });
         chrome.runtime.sendMessage({ action: 'tesseractDone' });
         return text;
       } catch (error) {

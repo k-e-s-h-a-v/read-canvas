@@ -19,20 +19,14 @@ Experience Read Canvas in action: extract text from canvas elements and auto-fil
 
 ## Installation & Usage
 
-1. **Direct Download (Recommended for most users):**
-   - Download the latest `read-canvas.crx` file from the [Releases page](https://github.com/k-e-s-h-a-v/read-canvas/releases).
-   - Open `chrome://extensions` in your Chrome browser.
-   - Enable **Developer mode** (toggle in the top right).
-   - Drag and drop the downloaded `read-canvas.crx` file onto the extensions page to install.
-
-2. **Clone the repository (for developers):**
+1. **Clone the repository (for developers):**
    ```bash
    git clone git@github.com:k-e-s-h-a-v/read-canvas.git
    cd read-canvas
    ```
 
-3. **Install**: Load the extension in Chrome via `chrome://extensions` (Developer Mode > Load unpacked > select this folder).
-4. **Usage**:
+2. **Install**: Load the extension in Chrome via `chrome://extensions` (Developer Mode > Load unpacked > select this folder).
+3. **Usage**:
    - Navigate to a page with a canvas (e.g., CAPTCHA, drawing, or game).
    - Click the extension icon or use the popup to trigger OCR.
    - The recognized text will be auto-filled into the nearest input field, and also available in the popup for copying.
